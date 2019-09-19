@@ -14,59 +14,11 @@ function setupDataStore(){
     var tacCodes = []
     var descantCodes = []
 
-    //generate GRIFFFIN detector nomenclature codes
-    for(i=1; i<17; i++){
-        for(j=0; j<griffinQuads.length; j++){
-            griffinCodes.push('GRG' + alwaysThisLong(i,2) + griffinQuads[j] + 'N00A');
-        }
-    }
-    for(i=1; i<17; i++){
-        for(j=0; j<griffinQuads.length; j++){
-            griffinCodes.push('GRG' + alwaysThisLong(i,2) + griffinQuads[j] + 'N00B');
-        }
+    //generate 8pi detector nomenclature codes
+    for(i=0; i<16; i++){
+        griffinCodes.push('Channel0' + alwaysThisLong(i,2));
     }
 
-    //generate GRIFFFIN BGO detector nomenclature codes
-    for(i=1; i<17; i++){
-        for(j=0; j<griffinQuads.length; j++){
-            for(k=1; k<6; k++){
-		grifBGOCodes.push('GRS' + alwaysThisLong(i,2) + griffinQuads[j] + 'N'+ alwaysThisLong(k,2) + 'X');
-	    }
-        }
-    }
-    
-    //generate SCEPTAR detector nomenclature codes
-    sceptarCodes.push('ZDS01XN00X');
-    for(i=1; i<21; i++){
-        sceptarCodes.push('SEP' + alwaysThisLong(i,2) + 'XN00X');
-    }
-
-    //generate PACES detector nomenclature codes
-    for(i=1; i<6; i++){
-        pacesCodes.push('PAC' + alwaysThisLong(i,2) + 'XN00X');
-    }
-
-    //generate LaBr3 detector nomenclature codes
-    for(i=1; i<9; i++){
-        labr3Codes.push('LBL' + alwaysThisLong(i,2) + 'XN00X');
-    }
-
-    //generate LaBr3 detector nomenclature codes
-    for(i=1; i<9; i++){
-        labBGOCodes.push('LBS' + alwaysThisLong(i,2) + 'AN00X');
-        labBGOCodes.push('LBS' + alwaysThisLong(i,2) + 'BN00X');
-        labBGOCodes.push('LBS' + alwaysThisLong(i,2) + 'CN00X');
-    }
-
-    //generate LaBr3 TACs detector nomenclature codes
-    for(i=1; i<9; i++){
-        tacCodes.push('LBT' + alwaysThisLong(i,2) + 'XT00X');
-    }
-
-    //generate DESCANT detector nomenclature codes
-    for(i=1; i<71; i++){
-        descantCodes.push('DSC' + alwaysThisLong(i,2) + 'XN00X');
-    }
 
     //declare top level groups
     var topGroups = [
@@ -101,8 +53,8 @@ function setupDataStore(){
         },
 
         {
-            "name": "GRIFFIN",
-            "id": "GRIFFIN",
+            "name": "8PI",
+            "id": "8PI",
             "color": '#367FA9',
             "subGroups": [
                 {
@@ -126,199 +78,6 @@ function setupDataStore(){
                     "items": griffinCodes.map(function(c){return c + '_Waveform'})
                 }
             ]
-        },
-
-        {
-            "name": "BGO",
-            "id": "BGO",
-            "color": '#367FA9',
-            "subGroups": [
-                {
-                    "subname": "Energy",
-                    "id": "GRSenergy",
-                    "items": grifBGOCodes.map(function(c){return c + '_Energy'})
-                },
-                {
-                    "subname": "Time",
-                    "id": "GRStime",
-                    "items": grifBGOCodes.map(function(c){return c + '_Time'})
-                },
-                {
-                    "subname": "Pulse Height",
-                    "id": "GRSpulseHeight",
-                    "items": grifBGOCodes.map(function(c){return c + '_Pulse_Height'})
-                },
-                {
-                    "subname": "Waveform",
-                    "id": "GRSwaveform",
-                    "items": grifBGOCodes.map(function(c){return c + '_Waveform'})
-                }
-            ]
-        },
-
-        {
-            "name": "SCEPTAR",
-            "id": "SCEPTAR",
-            "color": '#367FA9',
-            "subGroups": [
-                {
-                    "subname": "Energy",
-                    "id": "SEPenergy",
-                    "items": sceptarCodes.map(function(c){return c + '_Energy'})
-                },
-                {
-                    "subname": "Time",
-                    "id": "SEPtime",
-                    "items": sceptarCodes.map(function(c){return c + '_Time'})
-                },
-                {
-                    "subname": "Pulse Height",
-                    "id": "SEPpulseHeight",
-                    "items": sceptarCodes.map(function(c){return c + '_Pulse_Height'})
-                },
-                {
-                    "subname": "Waveform",
-                    "id": "SEPwaveform",
-                    "items": sceptarCodes.map(function(c){return c + '_Waveform'})
-                }
-            ]
-        },
-
-        {
-            "name": "PACES",
-            "id": "PACES",
-            "color": '#367FA9',
-            "subGroups": [
-                {
-                    "subname": "Energy",
-                    "id": "PACenergy",
-                    "items": pacesCodes.map(function(c){return c + '_Energy'})
-                },
-                {
-                    "subname": "Time",
-                    "id": "PACtime",
-                    "items": pacesCodes.map(function(c){return c + '_Time'})
-                },
-                {
-                    "subname": "Pulse Height",
-                    "id": "PACpulseHeight",
-                    "items": pacesCodes.map(function(c){return c + '_Pulse_Height'})
-                },
-                {
-                    "subname": "Waveform",
-                    "id": "PACwaveform",
-                    "items": pacesCodes.map(function(c){return c + '_Waveform'})
-                }
-            ]
-        },
-
-        {
-            "name": "LABR3",
-            "id": "LABR3",
-            "color": '#367FA9',
-            "subGroups": [
-                {
-                    "subname": "Energy",
-                    "id": "LBLenergy",
-                    "items": labr3Codes.map(function(c){return c + '_Energy'})
-                },
-                {
-                    "subname": "TAC",
-                    "id": "LBTenergy",
-                    "items": tacCodes.map(function(c){return c + '_Energy'})
-                },
-                {
-                    "subname": "Time",
-                    "id": "LBLtime",
-                    "items": labr3Codes.map(function(c){return c + '_Time'})
-                },
-                {
-                    "subname": "Pulse Height",
-                    "id": "LBLpulseHeight",
-                    "items": labr3Codes.map(function(c){return c + '_Pulse_Height'})
-                },
-                {
-                    "subname": "Energy Waveform",
-                    "id": "LBLwaveform",
-                    "items": labr3Codes.map(function(c){return c + '_Waveform'})
-                },
-                {
-                    "subname": "TAC Waveform",
-                    "id": "LBTwaveform",
-                    "items": tacCodes.map(function(c){return c + '_Waveform'})
-                }
-            ]
-        },
-
-        {
-            "name": "LABR3 BGO",
-            "id": "LABBGO",
-            "color": '#367FA9',
-            "subGroups": [
-                {
-                    "subname": "Energy",
-                    "id": "LBSenergy",
-                    "items": labBGOCodes.map(function(c){return c + '_Energy'})
-                },
-                {
-                    "subname": "Time",
-                    "id": "LBStime",
-                    "items": labBGOCodes.map(function(c){return c + '_Time'})
-                },
-                {
-                    "subname": "Pulse Height",
-                    "id": "LBSpulseHeight",
-                    "items": labBGOCodes.map(function(c){return c + '_Pulse_Height'})
-                },
-                {
-                    "subname": "Energy Waveform",
-                    "id": "LBSwaveform",
-                    "items": labBGOCodes.map(function(c){return c + '_Waveform'})
-                }
-            ]
-        },
-
-        {
-            "name": "DESCANT",
-            "id": "DESCANT",
-            "color": '#367FA9',
-            "subGroups": [
-                {
-                    "subname": "Energy",
-                    "id": "DSCenergy",
-                    "items": descantCodes.map(function(c){return c + '_Energy'})
-                },
-                {
-                    "subname": "Time",
-                    "id": "DSCtime",
-                    "items": descantCodes.map(function(c){return c + '_Time'})
-                },
-                {
-                    "subname": "Pulse Height",
-                    "id": "DSCpulseHeight",
-                    "items": descantCodes.map(function(c){return c + '_Pulse_Height'})
-                },
-                {
-                    "subname": "Waveform",
-                    "id": "DSCwaveform",
-                    "items": descantCodes.map(function(c){return c + '_Waveform'})
-                },
-                {
-                    "subname": "Zero Crossing",
-                    "id": "DSCzero",
-                    "items": descantCodes.map(function(c){return c + '_Zero_Crossing'})
-                },
-                {
-                    "subname": "Long Integration",
-                    "id": "DSClongInt",
-                    "items": descantCodes.map(function(c){return c + '_Long_Integration'})
-                },
-                {
-                    "subname": "Short Integration",
-                    "id": "DSCshortInt",
-                    "items": descantCodes.map(function(c){return c + '_Short_Integration'})
-                }
-            ]
         }
     ]
 
@@ -329,7 +88,7 @@ function setupDataStore(){
         "doUpdates": true,                                          //do we want the data update button and loop?
         "scaling": false,                                           //do we want to expose x-axis rescaling UI?
         "plots": [],                                                //array of names for default plot cells
-        "spectrumServer": 'http://grsmid00.triumf.ca:9093',         //analyzer url + port
+        "spectrumServer": 'http://titan01.triumf.ca:9093',         //analyzer url + port
         "ODBrequests": [],                                          //array of odb requests to make on refresh
         "zeroedPlots": {}                                           //initialize empty object for zeroed plots
     }
@@ -346,7 +105,7 @@ setupDataStore();
 function fetchCallback(){
     //fires after all data has been updated
 
-    var i, 
+    var i,
         keys = Object.keys(dataStore.viewers);
 
     for(i=0; i<keys.length; i++){
