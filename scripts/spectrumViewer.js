@@ -4,21 +4,18 @@
 
 function setupDataStore(){
     var i,j,k
-    var griffinQuads = ['B', 'G', 'R', 'W'];
     var griffinCodes = []
-    var grifBGOCodes = []
-    var sceptarCodes = []
-    var pacesCodes = []
-    var labr3Codes = []
-    var labBGOCodes = []
-    var tacCodes = []
-    var descantCodes = []
+    var mdppCodes = []
+
 
     //generate 8pi detector nomenclature codes
     for(i=0; i<16; i++){
-        griffinCodes.push('Channel0' + alwaysThisLong(i,2));
+        griffinCodes.push('GRIFChannel0' + alwaysThisLong(i,2));
     }
 
+    for(i=0; i<16; i++){
+        mdppCodes.push('mdpp16_' + i);
+    }
 
     //declare top level groups
     var topGroups = [
@@ -78,6 +75,33 @@ function setupDataStore(){
                     "items": griffinCodes.map(function(c){return c + '_Waveform'})
                 }
             ]
+        },
+                {
+            "name": "MDPP16",
+            "id": "MDPP16",
+            "color": '#367FA9',
+            "subGroups": [
+                {
+                    "subname": "Energy",
+                    "id": "MDPPenergy",
+                    "items": mdppCodes.map(function(c){return c + '_Energy'})
+                },
+                {
+                    "subname": "Time",
+                    "id": "MDPPtime",
+                    "items": mdppCodes.map(function(c){return c + '_Time'})
+                },
+                {
+                    "subname": "Pulse Height",
+                    "id": "MDPPpulseHeight",
+                    "items": mdppCodes.map(function(c){return c + '_Pulse_Height'})
+                },
+                {
+                    "subname": "Waveform",
+                    "id": "MDPPwaveform",
+                    "items": mdppCodes.map(function(c){return c + '_Waveform'})
+                }
+            ]
         }
     ]
 
@@ -88,7 +112,7 @@ function setupDataStore(){
         "doUpdates": true,                                          //do we want the data update button and loop?
         "scaling": false,                                           //do we want to expose x-axis rescaling UI?
         "plots": [],                                                //array of names for default plot cells
-        "spectrumServer": 'http://titan01.triumf.ca:9093',         //analyzer url + port
+        "spectrumServer": 'http://jringuette.triumf.ca:9093',         //analyzer url + port
         "ODBrequests": [],                                          //array of odb requests to make on refresh
         "zeroedPlots": {}                                           //initialize empty object for zeroed plots
     }
