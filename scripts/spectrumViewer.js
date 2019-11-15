@@ -10,7 +10,7 @@ function setupDataStore(){
 
     //generate 8pi detector nomenclature codes
     for(i=0; i<16; i++){
-        griffinCodes.push('GRIFChannel0' + alwaysThisLong(i,2));
+        griffinCodes.push('grif16_' + i);
     }
 
     for(i=0; i<16; i++){
