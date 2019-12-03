@@ -112,7 +112,7 @@ function setupDataStore(){
         "doUpdates": true,                                          //do we want the data update button and loop?
         "scaling": false,                                           //do we want to expose x-axis rescaling UI?
         "plots": [],                                                //array of names for default plot cells
-        "spectrumServer": 'http://jringuette.triumf.ca:9093',         //analyzer url + port
+        "spectrumServer": 'http://titan-decayspec.triumf.ca:9093',         //analyzer url + port
         "ODBrequests": [],                                          //array of odb requests to make on refresh
         "zeroedPlots": {}                                           //initialize empty object for zeroed plots
     }
