@@ -20,8 +20,8 @@ function setupDataStore(){
     dataStore = {
         "topGroups": topGroups,                                     //groups in top nav row
         "cutVertices": [],                                          //[x,y] vertices of cut region polygon
-        "ODBhost": 'http://annikal.triumf.ca:8081',                 //host:port of ODB to write cut region vertices to
-        "spectrumServer": 'http://annikal.triumf.ca:9093',          //host:port to pull raw spectra from
+        "ODBhost": 'http://titan05.triumf.ca:8081',                 //host:port of ODB to write cut region vertices to
+        "spectrumServer": 'http://titan05.triumf.ca:9093',          //host:port to pull raw spectra from
         "raw": [0],
         "closeMenuOnclick": true,                                   //don't keep the plot menu open onclick (can only plot one at a time anyway)
         "pageTitle": '2D Spectrum Viewer'
