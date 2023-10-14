@@ -76,9 +76,37 @@ function setupDataStore(){
                 }
             ]
         },
-                {
+        {
             "name": "MDPP16",
             "id": "MDPP16",
+            "color": '#367FA9',
+            "subGroups": [
+                {
+                    "subname": "Energy",
+                    "id": "MDPPenergy",
+                    "items": mdppCodes.map(function(c){return c + '_Energy'})
+                },
+                {
+                    "subname": "Time",
+                    "id": "MDPPtime",
+                    "items": mdppCodes.map(function(c){return c + '_Time'})
+                },
+                {
+                    "subname": "Pulse Height",
+                    "id": "MDPPpulseHeight",
+                    "items": mdppCodes.map(function(c){return c + '_Pulse_Height'})
+                },
+                {
+                    "subname": "Waveform",
+                    "id": "MDPPwaveform",
+                    "items": mdppCodes.map(function(c){return c + '_Waveform'})
+                }
+            ]
+        },
+
+        {
+            "name": "test",
+            "id": "test",
             "color": '#367FA9',
             "subGroups": [
                 {
