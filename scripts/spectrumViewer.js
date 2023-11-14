@@ -7,6 +7,9 @@ function setupDataStore(){
     var griffinCodes = []
     var mdppCodes = []
 
+    var testCodes = []
+    testCodes.push('test_');
+
 
     //generate 8pi detector nomenclature codes
     for(i=0; i<16; i++){
@@ -110,24 +113,9 @@ function setupDataStore(){
             "color": '#367FA9',
             "subGroups": [
                 {
-                    "subname": "Energy",
-                    "id": "MDPPenergy",
-                    "items": mdppCodes.map(function(c){return c + '_Energy'})
-                },
-                {
-                    "subname": "Time",
-                    "id": "MDPPtime",
-                    "items": mdppCodes.map(function(c){return c + '_Time'})
-                },
-                {
-                    "subname": "Pulse Height",
-                    "id": "MDPPpulseHeight",
-                    "items": mdppCodes.map(function(c){return c + '_Pulse_Height'})
-                },
-                {
-                    "subname": "Waveform",
-                    "id": "MDPPwaveform",
-                    "items": mdppCodes.map(function(c){return c + '_Waveform'})
+                    "subname": "TEST",
+                    "id": "TEST",
+                    "items": testCodes
                 }
             ]
         }
