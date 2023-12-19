@@ -331,6 +331,7 @@ function heatmap(width, height){
         this.zoom_y_coord_min = evt.clientY - bounds.top;
         this.zoom_x_min = cell.x;
         this.zoom_y_min = cell.y;
+        document.getElementById('intro-unzoom').classList.remove('hidden');
     }
 
     this.mouseup = function(evt){
@@ -429,6 +430,7 @@ function heatmap(width, height){
             this.ctx[i].clearRect(0,0,this.width,this.height);
         }
         this.zoom(0,0,this._raw[0].length, this._raw.length);
+        document.getElementById('intro-unzoom').classList.add('hidden');
     }
 
     this.abandonZoom = function(){

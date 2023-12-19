@@ -306,7 +306,7 @@
             //refresh all spectra & odb parameters
             //this: plotControl object
 
-            var queries = constructQueries(this.activeSpectra),
+            var queries = construct1dQueries(this.activeSpectra),
                 spectraFetched = Promise.all(queries.map(promiseJSONURL)).then(
                     function(spectra){
                         var i, j, key, viewerKey;

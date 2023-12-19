@@ -14,6 +14,18 @@ function setupDataStore(){
                    ]
                 }
             ]
+        },
+        {
+            "name": "test_2d_name",
+            "id": "test_2d_id",
+            "color": '#367FA9',
+            "subGroups": [
+                {
+                    "subname": "test_2d_subname",
+                    "id": "test_2d_subid",
+                    "items": ['test_2d_chan']
+                }
+            ]
         }
     ]
 
@@ -101,7 +113,7 @@ function plotControl(wrapID){
         //     fetchCallback();
         // }
 
-        var queries = constructQueries(this.activeSpectra);
+        var queries = construct2dQueries(this.activeSpectra);
 
         if(dataStore.activeSpectra){
             Promise.all(queries.map(promiseJSONURL)

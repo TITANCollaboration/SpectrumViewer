@@ -1,5 +1,6 @@
 <html>
     <head>
+        <title>TITAN 2d Spectrum Viewer</title>
         <!--libraries-->
         <script src='scripts/HTMLImports.min.js' type="text/javascript"></script>
         <script type='text/javascript' src='scripts/heatmap.js'></script>
@@ -57,6 +58,10 @@
                         <div id='intro-shift-click' class="alert alert-warning hidden" role="alert">
                             <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                             Shift-click several points on the plot to mark a region of interest.
+                        </div>
+                        <div id='intro-unzoom' class="alert alert-warning hidden" role="alert">
+                            <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+                            You can unzoom by double-clicking.
                         </div>
                         <ul id='cutPolyVertices' class='list-unstyled'></ul>
                         <button class='btn btn-success' onclick='saveCutToODB()'>Save Cut Region to ODB</button>

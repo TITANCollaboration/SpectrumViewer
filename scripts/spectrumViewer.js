@@ -8,7 +8,7 @@ function setupDataStore(){
     var mdppCodes = []
 
     var testCodes = []
-    testCodes.push('test_');
+    testCodes.push('test_chan');
 
 
     //generate 8pi detector nomenclature codes
@@ -108,13 +108,13 @@ function setupDataStore(){
         },
 
         {
-            "name": "test",
-            "id": "test",
+            "name": "test_name",
+            "id": "test_id",
             "color": '#367FA9',
             "subGroups": [
                 {
-                    "subname": "TEST",
-                    "id": "TEST",
+                    "subname": "test_subname",
+                    "id": "test_subid",
                     "items": testCodes
                 }
             ]
