@@ -39,6 +39,10 @@
             <div class='col-md-4 no-pad'>
                 <div id='plotControl'>
 
+                    <div class='ui-group-vertical'> <!-- Not implemented yet -->
+                        <span id='cursorReport'>Cursor x: - y: -</span>
+                    </div>
+                    
                     <div id='updateWrap' class='ui-group-vertical'>
                         <h4>Data Fetching</h4>
                         <div class="input-group">
@@ -53,6 +57,30 @@
                         <button id="upNow" class="btn btn-default" type="button">Update Now</button>
                     </div>
 
+                    <div id='axisControl' class='ui-group-vertical'>
+                        <h4>Axis Control</h4> <!-- Not implemented yet -->
+                        <div class="input-group">
+                            <span class='input-group-addon'>min x</span>
+                            <input id="minX" value="0" type="number" class='black-text'></input>
+                        </div>
+
+                        <div class="input-group">
+                            <span class='input-group-addon'>max x</span>
+                            <input id="maxX" value="20" type="number" class='black-text'></input>
+                        </div>
+
+                        <div class="input-group">
+                            <span class='input-group-addon'>min y</span>
+                            <input id="minY" value="0" type="number" class='black-text'></input>
+                        </div>
+
+                        <div class="input-group">
+                            <span class='input-group-addon'>max y</span>
+                            <input id="maxY" value="20" type="number" class='black-text'></input>
+                        </div>
+                    </div>
+                    
+
                     <div id='cutBounds' class='ui-group-vertical'>
                         <h4>Cut Bounds</h4>
                         <div id='intro-shift-click' class="alert alert-warning hidden" role="alert">
@@ -63,8 +91,11 @@
                             <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
                             You can unzoom by double-clicking.
                         </div>
+                        <!-- Not working -->
+                        <!-- 
                         <ul id='cutPolyVertices' class='list-unstyled'></ul>
                         <button class='btn btn-success' onclick='saveCutToODB()'>Save Cut Region to ODB</button>
+                        -->
                     </div>
                 
                     <div id='info-slow-data' class="alert alert-info hidden" role="alert">

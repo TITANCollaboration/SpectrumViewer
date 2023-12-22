@@ -318,6 +318,24 @@ function heatmap(width, height){
             this.zmax = this.zmin+1;
     }
 
+    // X and Y range management
+    this.updateAllRanges = function(){
+        //update the x and y ranges of the plot based on the text box inputs
+        //this: plotControl object
+        var xMin = document.getElementById('minX'),
+            xMax = document.getElementById('maxX'),
+            yMin = document.getElementById('minY'),
+            yMin = document.getElementById('maxY');
+        
+        var x0 = parseInt(xMin.value,10),
+            x1 = parseInt(xMax.value,10),
+            y0 = parseInt(yMin.value,10),
+            y1 = parseInt(yMax.value,10);
+        
+        if ((x0 <= x1) & (y0 <= y1))
+            this.zoom(x0, x1, y0, y1);
+    } 
+
     ////////////////////////
     // event listeners
     ////////////////////////

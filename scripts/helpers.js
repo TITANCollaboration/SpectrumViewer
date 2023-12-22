@@ -398,6 +398,7 @@ function construct1dQueries(keys){
     return queries
 }
 function construct2dQueries(keys){
+    // similar to construct1dQueries() but for 2d spectra
     for(i=0; i<Math.ceil(keys.length/16); i++){
         queryString = dataStore.spectrumServer + '?cmd=call2dspechandler';
         for(j=i*16; j<Math.min( (i+1)*16, keys.length ); j++){

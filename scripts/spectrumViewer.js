@@ -107,7 +107,7 @@ function setupDataStore(){
             ]
         },
 
-        {
+        { //  header for dummy 1d data
             "name": "test_name",
             "id": "test_id",
             "color": '#367FA9',

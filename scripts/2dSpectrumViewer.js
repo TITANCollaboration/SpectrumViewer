@@ -15,7 +15,7 @@ function setupDataStore(){
                 }
             ]
         },
-        {
+        { // header for dummy 2d data
             "name": "test_2d_name",
             "id": "test_2d_id",
             "color": '#367FA9',
@@ -61,6 +61,12 @@ function plotControl(wrapID){
         document.getElementById('upNow').onclick = this.refreshData.bind(this);
         //set the refresh loop going
         this.startRefreshLoop.bind(document.getElementById('upOptions'), this)();
+
+        // X and Y axis control
+        //document.getElementById('minX').onchange = this.updateAllRanges.bind(this);
+        //document.getElementById('maxX').onchange = this.updateAllRanges.bind(this);
+        //document.getElementById('minY').onchange = this.updateAllRanges.bind(this);
+        //document.getElementById('maxY').onchange = this.updateAllRanges.bind(this);
     }
 
     this.startRefreshLoop = function(controlElement){
